@@ -3,9 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMAZE</title>
+    <title>IMAZE - The future with us</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Palette ufficiale IMAZE */
+            'imaze-red':        '#e13155',
+            'imaze-black':      '#000f08',
+            'imaze-light':      '#f9e9ec',
+            'imaze-blush':      '#e5c1bd',
+            'imaze-nav-closed': '#000f08',
+            'imaze-nav-open':   '#e3d985',
+            'imaze-white':      '#FFFFFF',
+            'imaze-dark':       '#0a0f0a',
+          },
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif'],
+            body:    ['Montserrat', 'sans-serif'],
+            barlow:  ['Barlow', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-imaze-light font-body text-imaze-black overflow-x-hidden">
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+
+  <!-- animazione GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <nav id="navbar" class="mt-4 m-auto flex p-3 rounded-md items-start overflow-hidden fixed left-1/2 -translate-x-1/2 top-0 z-50" style="height:64px; width: 80px; background-color: #000f08;">
+
+    <!-- ICONE LUCE-->
+    <button id="menuToggle" class="relative w-12 h-12 p-1 flex-shrink-0" aria-label="Apri menu">
+        
+      <span id="iconOpen" class="absolute inset-0 flex flex-col justify-center items-center gap-1.5 transition-opacity duration-300">
+      <img src="assets/foto/luce menù ancora chiuso.png"  id="iconOpen"  class="absolute inset-0 w-full h-full transition-opacity duration-300" alt="apri menu">
+      </span>
+        <img src="assets/foto/luce menù aperto.png" id="iconClose" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300" alt="chiudi menu">
+      </span>
+    </button>
+
+    <!-- Voci menu -->
+    <ul id="navItems" class="mt-16 w-full">
+      <li class="nav-item">
+        <a href="#servizi"   class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Servizi</a>
+      </li>
+      <li class="nav-item">
+        <a href="#chi-siamo" class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Chi Siamo</a>
+      </li>
+      <li class="nav-item">
+        <a href="#lavori"    class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">I nostri lavori</a>
+      </li>
+      <li class="nav-item">
+        <a href="#lo-studio" class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Lo Studio</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contatti"  class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Contatti</a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <script>
+    // ---- animazione gsap menù  ----
+    const menuToggle  = document.querySelector('#menuToggle');
+    const nav         = document.querySelector('#navbar');
+    const iconOpen    = document.getElementById('iconOpen');
+    const iconClose   = document.getElementById('iconClose');
+    const animDuration = 0.45;
+
+    const tlNav = gsap.timeline({
+      paused: true,
+      defaults: { duration: animDuration, ease: 'power2.out' }
+    });
+
+    tlNav.to(nav, { width: 'min(480px, calc(100vw - 32px))' });
+    tlNav.to(nav, { height: '380px' });
+    tlNav.from('#navItems li', { opacity: 0, y: 40, stagger: 0.08 }, '-=0.25');
+
+    menuToggle.addEventListener('click', e => {
+      e.preventDefault();
+      nav.classList.toggle('open');
+
+      if (nav.classList.contains('open')) {
+        tlNav.play();
+        iconOpen.style.opacity  = '0';
+        iconClose.style.opacity = '1';
+        nav.style.backgroundColor = '#e3d985';
+        // testo scuro su sfondo giallo
+        document.querySelectorAll('.nav-gsap-link').forEach(l => {
+          l.style.color = '#000f08';
+        });
+      } else {
+        tlNav.reverse();
+        iconOpen.style.opacity  = '1';
+        iconClose.style.opacity = '0';
+        nav.style.backgroundColor = '#000f08';
+        // testo bianco su sfondo scuro
+        document.querySelectorAll('.nav-gsap-link').forEach(l => {
+          l.style.color = '#ffffff';
+        });
+      }
+    });
+
+    // Chiudi menu cliccando un link
+    document.querySelectorAll('.nav-gsap-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          tlNav.reverse();
+          iconOpen.style.opacity  = '1';
+          iconClose.style.opacity = '0';
+          nav.style.backgroundColor = '#000f08';
+        }
+      });
+    });
+
+    // Resize: resetta larghezza se chiuso
+    window.addEventListener('resize', () => {
+      if (!nav.classList.contains('open')) nav.style.width = '';
+    });
+  </script>
+
+<!-- HERO-->
+  <section id="hero" class="relative min-h-screen flex items-end pb-0 overflow-hidden bg-imaze-black">
+
+    <!-- Background image -->
+    <div class="absolute inset-0">
+    <img src="assets/foto/HERO.png" alt="tre lattine di birra Beeraze" class="w-full h-full object-cover opacity-70">
+      
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- TICKER – striscia scorrevole  -->
+  <div class="w-full bg-imaze-red py-3 overflow-hidden">
+    <div class="ticker-track whitespace-nowrap inline-block">
+      <span class="ticker-content font-semibold tracking-widest uppercase text-sm text-imaze-light px-6">
+        IMAZE THE FUTURE WITH US &nbsp;&nbsp;|&nbsp;&nbsp; LET'S IMAZE TOGETHER &nbsp;&nbsp;|&nbsp;&nbsp; DESIGNED TO IMAZE &nbsp;&nbsp;|&nbsp;&nbsp;
+        IMAZE THE FUTURE WITH US &nbsp;&nbsp;|&nbsp;&nbsp; LET'S IMAZE TOGETHER &nbsp;&nbsp;|&nbsp;&nbsp; DESIGNED TO IMAZE &nbsp;&nbsp;|&nbsp;&nbsp;
+        IMAZE THE FUTURE WITH US &nbsp;&nbsp;|&nbsp;&nbsp; LET'S IMAZE TOGETHER &nbsp;&nbsp;|&nbsp;&nbsp; DESIGNED TO IMAZE &nbsp;&nbsp;|&nbsp;&nbsp;
+      </span>
+    </div>
+  </div>
     
 </body>
 </html>
