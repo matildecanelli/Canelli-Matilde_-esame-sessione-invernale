@@ -1,10 +1,13 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  font-family: 'Montserrat', sans-serif;
-}
+
+/*LIGHTBOX FOTO E VIDEO */
 
 #photo-lightbox,
 #video-lightbox {
@@ -26,6 +29,14 @@ html {
   animation: lb-fade-in 0.2s ease;
 }
 
+/*FORM – FOCUS DEL IMPUT SELEZIONATO*/
+input:focus,
+textarea:focus {
+  border-color: #e13155 !important;
+  box-shadow: 0 0 0 2px rgba(225, 49, 85, 0.15);
+}
+
+/*CHECKBOX DEI SERVIZI DEL FORM */
 
 .checkbox-service:has(input:checked) {
   background-color: #e13155;
@@ -40,4 +51,39 @@ html {
   color: #e13155;
   font-size: 11px;
   font-weight: 900;
+}
+
+/* TICKER  CHE SCORRE SOTTO LA HERO */
+.ticker-track {
+  animation: ticker-scroll 25s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/*SCROLLBAR NASCOSTA PER GALLERIA STUDIO */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* TAB LINGUETTE – stile cartelle sospese */
+#chi-siamo-tab,
+#lavori-tab,
+#lo-studio-tab,
+#contatti-tab {
+  border-radius: 10px 10px 0 0;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: -1px;
 }
