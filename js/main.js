@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ---- CHIUDI CON ESC ----
+  // ---- CHIUDI CON ESC DELLE LIGHTBOX----
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       if (photoLightbox.classList.contains('open')) closePhoto();
