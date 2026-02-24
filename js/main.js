@@ -94,3 +94,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+window.addEventListener('load', () => {
+  const compareBox = document.getElementById('studio-compare');
+  const nightImg   = document.getElementById('studio-night-img');
+  const handle     = document.getElementById('studio-handle');
+
+  if (!compareBox) return;
+
+  let isDragging = false;
+
+  function updatePosition(x) {
+    const rect = compareBox.getBoundingClientRect();
+    let pct = (x - rect.left) / rect.width;
+    pct = Math.max(0.01, Math.min(0.99, pct));
+    const perc = (pct * 100).toFixed(2);
+    // clip-path taglia l'immagine da destra
+    nightImg.style.clipPath = `inset(0 ${100 - perc}% 0 0)`;
+    handle.style.left = perc + '%';
+  }
+
+  handle.addEventListener('mousedown', e => { isDragging = true; e.preventDefault(); });
+  window.addEventListener('mouseup',   () => isDragging = false);
+  window.addEventListener('mousemove', e => { if (isDragging) updatePosition(e.clientX); });
+
+  handle.addEventListener('touchstart', e => { isDragging = true; e.preventDefault(); }, { passive: false });
+  window.addEventListener('touchend',   () => isDragging = false);
+  window.addEventListener('touchmove',  e => { if (isDragging) updatePosition(e.touches[0].clientX); }, { passive: false });
+
+});

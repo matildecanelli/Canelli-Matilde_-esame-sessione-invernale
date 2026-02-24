@@ -40,9 +40,7 @@
 </head>
 <body class="bg-imaze-light font-body text-imaze-black overflow-x-hidden">
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
+  <!--  NAVBAR -->
 
   <!-- animazione GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -60,21 +58,21 @@
     </button>
 
     <!-- Voci menu -->
-    <ul id="navItems" class="mt-16 w-full">
+    <ul id="navItems" class=" w-full flex flex-row items-center gap-6 ml-4">
       <li class="nav-item">
-        <a href="#servizi"   class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Servizi</a>
+        <a href="#servizi"   class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Servizi</a>
       </li>
       <li class="nav-item">
-        <a href="#chi-siamo" class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Chi Siamo</a>
+        <a href="#chi-siamo" class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Chi siamo</a>
       </li>
       <li class="nav-item">
-        <a href="#lavori"    class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">I nostri lavori</a>
+        <a href="#lavori"    class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer"> Progetti</a>
       </li>
       <li class="nav-item">
-        <a href="#lo-studio" class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Lo Studio</a>
+        <a href="#lo-studio" class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">the Spaze</a>
       </li>
       <li class="nav-item">
-        <a href="#contatti"  class="nav-gsap-link font-display text-5xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Contatti</a>
+        <a href="#contatti"  class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Contatti</a>
       </li>
     </ul>
 
@@ -93,8 +91,7 @@
       defaults: { duration: animDuration, ease: 'power2.out' }
     });
 
-    tlNav.to(nav, { width: 'min(480px, calc(100vw - 32px))' });
-    tlNav.to(nav, { height: '380px' });
+    tlNav.to(nav, { width: 'min(1000px, calc(100vw - 32px))' });
     tlNav.from('#navItems li', { opacity: 0, y: 40, stagger: 0.08 }, '-=0.25');
 
     menuToggle.addEventListener('click', e => {
@@ -170,14 +167,14 @@
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <!-- Card 1 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black">
-        <h3 class="font-display text-imaze-red text-2xl leading-tight uppercase">
-          Concept,<br>Direzione<br>Produzione<br>e Post
+      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
+          Concept,Direzione<br>Produzione e Post
         </h3>
-        <p class="text-white text-sm leading-relaxed">
+        <p class="text-white text-sm leading-relaxed w-full">
           Dall'idea iniziale al contenuto finale. Sviluppiamo concept, messaggi e direzione creativa su misura per il brand. Pianifichiamo ogni dettaglio e realizziamo contenuti foto e video coerenti ed emozionali.
         </p>
-        <div class="mt-auto">
+        <div class="mt-auto pt-32 w-full text-center">
           <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light text-xs font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200">
             Raccontaci la tua idea
           </a>
@@ -185,14 +182,14 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black">
-        <h3 class="font-display text-imaze-red text-2xl leading-tight uppercase">
+      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
           Noleggio Spazio<br>e Attrezzature
         </h3>
-        <p class="text-white text-sm leading-relaxed">
+        <p class="text-white text-sm leading-relaxed w-full">
           Il nostro spazio può diventare anche il tuo. Uno studio attrezzato per shooting fotografici e video, arricchito da un servizio di noleggio. Offriamo un'attrezzatura professionale, selezionata per lavorare in modo fluido ed efficace.
         </p>
-        <div class="mt-auto">
+        <div class="mt-auto pt-32 w-full text-center">
           <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light text-xs font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200">
             Prenota ora
           </a>
@@ -200,11 +197,11 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black">
-        <h3 class="font-display text-imaze-red text-2xl leading-tight uppercase">
-          Elaborazione<br>Strategia<br>e dei Visual
+      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
+          Elaborazione Visual<br>e della Strategia
         </h3>
-        <p class="text-white text-sm leading-relaxed">
+        <p class="text-white text-sm leading-relaxed w-full">
           Le immagini funzionano solo se inserite in un sistema. Ogni contenuto ha un ruolo, ogni scelta ha una ragione. Diamo struttura al linguaggio visivo declinandolo su toni, formati e stili di ogni canale.
         </p>
         <div class="mt-auto">
@@ -225,13 +222,13 @@
   </div>
 
 
-  <!-- CHI SIAMO  #03-->
+  <!-- CHI SIAMO -->
   <section id="chi-siamo" class="bg-imaze-black py-16 px-6 md:px-16 scroll-mt-20">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
       <!-- Testo -->
       <div class="reveal">
-        <h2 class="font-display text-imaze-red text-5xl md:text-7xl leading-none mb-1">COS'È</h2>
+        <h2 class="font-display font-bold text-imaze-red text-5xl md:text-7xl leading-none mb-1">COS'È</h2>
        <img src="assets/foto/Logo Imaze BIANCO.png" alt="imaze." class="w-auto mt-1" style="height: 5rem;">
        <br>
 
@@ -244,28 +241,37 @@
         </div>
       </div>
 
-      <!-- 3 foto lightbox -->
-      <div class="flex flex-col gap-4 reveal">
+<!-- 3 foto lightbox  -->
+<div class="flex flex-col gap-4 reveal w-full">
 
-        <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group" data-src="assets/foto/Regaz.jpg" data-group="team">
-          <div class="w-full h-44 bg-imaze-dark flex items-center justify-center text-white/30 text-xs group-hover:scale-105 transition-transform duration-300">
-            <img src="assets/foto/Regaz.jpg" alt="foto team 1" class="w-full h-full object-cover">
-          </div>
-        </div>
+     <!--Foto 1 – ampia, tutta la larghezza -->
+  <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group" 
+       data-src="assets/foto/Regaz.jpg" data-group="team">
+    <img src="assets/foto/Regaz.jpg" alt="foto team 1" 
+         class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+         style="height: 280px;">
+  </div>
 
-        <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group" data-src="assets/foto/Regaz da dietro.jpg" data-group="team">
-          <div class="w-full h-44 bg-imaze-dark flex items-center justify-center text-white/30 text-xs group-hover:scale-105 transition-transform duration-300">
-         <img src="assets/foto/Regaz da dietro.jpg" alt="foto team 2" class="w-full h-full object-cover">
-          </div>
-        </div>
+  <!-- Foto 2 e 3 – metà larghezza, metà altezza, sulla stessa riga -->
+  <div class="flex gap-4">
 
-        <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group" data-src="assets/foto/Regaz che fanno i regaz.jpg" data-group="team">
-          <div class="w-full h-44 bg-imaze-dark flex items-center justify-center text-white/30 text-xs group-hover:scale-105 transition-transform duration-300">
-            <img src="assets/foto/Regaz che fanno i regaz.jpg" alt="foto team 3" class="w-full h-full object-cover">
-          </div>
-        </div>
+    <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group w-1/2" 
+         data-src="assets/foto/Regaz da dietro.jpg" data-group="team">
+      <img src="assets/foto/Regaz da dietro.jpg" alt="foto team 2" 
+           class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+           style="height: 180px;">
+    </div>
 
-      </div>
+    <div class="lightbox-trigger cursor-pointer overflow-hidden rounded-xl group w-1/2" 
+         data-src="assets/foto/Regaz che fanno i regaz.jpg" data-group="team">
+      <img src="assets/foto/Regaz che fanno i regaz.jpg" alt="foto team 3" 
+           class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+           style="height: 180px;">
+    </div>
+
+  </div>
+
+</div>
     </div>
   </section>
 
@@ -277,7 +283,7 @@
   </div>
 
 
-  <!--GALLERIA VIDEO  #04 -->
+  <!--GALLERIA VIDEO  -->
   <section id="lavori" class="bg-imaze-light py-16 px-6 md:px-16 scroll-mt-20">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-2 gap-3">
@@ -335,50 +341,72 @@
   </div>
 
 
-  <!-- GALLERIA FOTO STUDIO  #05-->
+  <!-- GALLERIA FOTO STUDIO -->
   <section id="lo-studio" class="bg-imaze-blush py-12 px-6 md:px-16 scroll-mt-20">
     <div class="max-w-6xl mx-auto">
 
       <!-- Striscia foto scrollabile -->
       <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory hide-scrollbar">
 
-        <!-- Foto studio 1 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/lato scuro studio arredato.jpg" data-group="studio" style="width:260px;height:180px;">  
-          <img src="assets/foto/lato scuro studio arredato.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
+                <!-- Foto studio 1 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/lato scuro studio arredato.jpg" data-group="studio" style="width:260px;height:180px;">  
+                <img src="assets/foto/lato scuro studio arredato.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
 
-        <!-- Foto studio 2 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/studio lati due arredato.jpg" data-group="studio" style="width:260px;height:180px;">
-          <img src="assets/foto/studio lati due arredato.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
+                <!-- Foto studio 2 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/studio lati due arredato.jpg" data-group="studio" style="width:260px;height:180px;">
+                <img src="assets/foto/studio lati due arredato.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
 
-        <!-- Foto studio 3 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/studio luci soffuse.jpg" data-group="studio" style="width:260px;height:180px;">
-            <img src="assets/foto/studio luci soffuse.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            </div>
+                <!-- Foto studio 3 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/studio luci soffuse.jpg" data-group="studio" style="width:260px;height:180px;">
+                    <img src="assets/foto/studio luci soffuse.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
 
-        <!-- Foto studio 4 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/bianco e nero.jpg" data-group="studio" style="width:260px;height:180px;">
-          <img src="assets/foto/bianco e nero.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
+                <!-- Foto studio 4 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/bianco e nero.jpg" data-group="studio" style="width:260px;height:180px;">
+                <img src="assets/foto/bianco e nero.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
 
-        <!-- Foto studio 5 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/esterno.jpg" data-group="studio" style="width:260px;height:180px;">
-          <img src="assets/foto/esterno.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
+                <!-- Foto studio 5 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/esterno.jpg" data-group="studio" style="width:260px;height:180px;">
+                <img src="assets/foto/esterno.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
 
-        <!-- Foto studio 6 -->
-        <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
-             data-src="assets/foto/piantina studio.jpg" data-group="studio" style="width:260px;height:180px;">
-          <img src="assets/foto/piantina studio.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
+                <!-- Foto studio 6 -->
+                <div class="lightbox-trigger flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg group"
+                    data-src="assets/foto/piantina studio.png" data-group="studio" style="width:260px;height:180px;">
+                <img src="assets/foto/piantina studio.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
 
       </div>
+     <!-- Comparatore giorno / notte -->
+        <div id="studio-compare" style="position: relative; width: 100%; height: 700px; overflow: hidden; border-radius: 12px; user-select: none;">
+
+  <!-- Foto giorno – sempre intera sotto -->
+  <img src="assets/foto/imaze_bianco-2023-1-scaled.jpg"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+
+  <!-- Foto notte – stessa dimensione, tagliata con clip-path -->
+  <img id="studio-night-img" src="assets/foto/imaze_nero-2023-1-scaled.jpg"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0 50% 0 0);">
+
+  <!-- Cursore -->
+  <div id="studio-handle" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: white; cursor: ew-resize; transform: translateX(-50%);">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.4);">
+      <span style="color: #e13155; font-weight: 900; font-size: 14px;">&#8249;&#8250;</span>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+            
 
     </div>
   </section>
@@ -397,9 +425,9 @@
 
       <!-- Form – box blush -->
       <div class="bg-imaze-blush rounded-2xl p-8 reveal">
-        <h2 class="font-semibold text-2xl md:text-3xl text-imaze-black uppercase leading-tight mb-6">
+        <h2 class="font-bold text-2xl md:text-3xl text-imaze-black uppercase leading-tight mb-6">
           Can you IMAZE with us?<br>
-          <span class="text-imaze-red">Inizia da qui...</span>
+          <span class="text-imaze-red font-semibold">Inizia da qui...</span>
         </h2>
       </div>
 
@@ -409,8 +437,8 @@
       <!-- Mappa + link – direttamente su sfondo nero della section -->
       <div class="flex flex-col gap-8 reveal">
 
-        <div>
-          <h3 class="font-semibold text-xl uppercase tracking-widest mb-3 text-imaze-light">DOVE TROVARCI</h3>
+        <div class="w-full text-right">
+          <h2 class="font-bold text-2xl uppercase tracking-widest mb-3 text-imaze-red ">DOVE TROVARCI</h2>
           
           <div class="w-full h-56 bg-imaze-dark rounded-xl flex flex-col items-center justify-center text-imaze-light/40 text-sm text-center px-4">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5592.853348224917!2d11.422660776480738!3d45.50148887107458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f3797f800d699%3A0x39c5c99fd87605f6!2simaze%20studio!5e0!3m2!1sit!2sit!4v1771895898164!5m2!1sit!2sit" width="100%" height="224" style="border:0;" allowfullscreen="" loading="lazy"
@@ -419,10 +447,10 @@
         
         </div>
 
-        <div>
-          <h3 class="font-semibold text-xl md:text-2xl uppercase leading-tight mb-4 text-imaze-light">
+        <div class="w-full text-right">
+          <h2 class="font-semibold text-xl md:text-2xl uppercase leading-tight mb-4 text-imaze-red">
             …oppure contattaci<br>direttamente!
-          </h3>
+          </h2>
           <ul class="flex flex-col gap-2.5 text-sm text-imaze-light">
             <li>
               <span class="font-semibold">Telefono:</span>
