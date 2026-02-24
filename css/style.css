@@ -27,3 +27,17 @@ html {
 }
 
 
+.checkbox-service:has(input:checked) {
+  background-color: #e13155;
+  color: #f9e9ec;
+}
+.checkbox-service:has(input:checked) .checkbox-box {
+  border-color: #f9e9ec;
+  background-color: #f9e9ec;
+}
+.checkbox-service:has(input:checked) .checkbox-box::after {
+  content: '✓';
+  color: #e13155;
+  font-size: 11px;
+  font-weight: 900;
+}

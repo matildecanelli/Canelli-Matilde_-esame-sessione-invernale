@@ -122,4 +122,27 @@ window.addEventListener('load', () => {
   window.addEventListener('touchend',   () => isDragging = false);
   window.addEventListener('touchmove',  e => { if (isDragging) updatePosition(e.touches[0].clientX); }, { passive: false });
 
+  // ---- FORM ----
+  const contactForm = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      const res  = await fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.reset();
+        formSuccess.classList.remove('hidden');
+        setTimeout(() => formSuccess.classList.add('hidden'), 5000);
+      } else {
+        alert('Ops, qualcosa è andato storto. Riprova!');
+      }
+    });
+  }
+
 });

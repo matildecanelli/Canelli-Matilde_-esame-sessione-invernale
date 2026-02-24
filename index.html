@@ -429,26 +429,95 @@
           Can you IMAZE with us?<br>
           <span class="text-imaze-red font-semibold">Inizia da qui...</span>
         </h2>
-      </div>
 
-        <!-- METTI IL FORM-->
-       
+              <form action="https://formsubmit.co/canellimatildee@gmail.com" method="POST" id="contact-form" class="flex flex-col gap-3">
+                  <!-- Campi nascosti Formsubmit -->
+    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito IMAZE!">
+    <input type="hidden" name="_captcha" value="false">
 
+    <!-- Nome e Cognome -->
+    <div class="grid grid-cols-2 gap-3">
+      <input type="text" name="nome" placeholder="Nome *" required
+        class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors" />
+      <input type="text" name="cognome" placeholder="Cognome *" required
+        class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors" />
+    </div>
+
+    <!-- Email -->
+    <input type="email" name="email" placeholder="Email *" required
+      class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors" />
+
+    <!-- Telefono -->
+    <input type="tel" name="telefono" placeholder="Telefono *" required
+      class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors" />
+
+    <!-- Azienda -->
+    <input type="text" name="azienda" placeholder="Azienda"
+      class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors" />
+
+    <!-- Checkbox servizi -->
+    <div class="grid grid-cols-2 gap-2 mt-1">
+
+      <label class="checkbox-service flex items-center gap-2 cursor-pointer rounded px-3 py-2.5 text-xs font-semibold border-2 border-imaze-red bg-imaze-light text-imaze-red transition-all duration-200">
+        <input type="checkbox" name="servizio[]" value="concept" class="hidden" />
+        <span class="checkbox-box w-4 h-4 rounded-sm border-2 border-imaze-red flex-shrink-0 flex items-center justify-center transition-all duration-200"></span>
+        Concept, direzione, produzione e post
+      </label>
+
+      <label class="checkbox-service flex items-center gap-2 cursor-pointer rounded px-3 py-2.5 text-xs font-semibold border-2 border-imaze-red bg-imaze-light text-imaze-red transition-all duration-200">
+        <input type="checkbox" name="servizio[]" value="contenuti" class="hidden" />
+        <span class="checkbox-box w-4 h-4 rounded-sm border-2 border-imaze-red flex-shrink-0 flex items-center justify-center transition-all duration-200"></span>
+        Content e visual strategy
+      </label>
+
+      <label class="checkbox-service flex items-center gap-2 cursor-pointer rounded px-3 py-2.5 text-xs font-semibold border-2 border-imaze-red bg-imaze-light text-imaze-red transition-all duration-200">
+        <input type="checkbox" name="servizio[]" value="noleggio" class="hidden" />
+        <span class="checkbox-box w-4 h-4 rounded-sm border-2 border-imaze-red flex-shrink-0 flex items-center justify-center transition-all duration-200"></span>
+        Noleggio spazio e attrezzature
+      </label>
+
+      <label class="checkbox-service flex items-center gap-2 cursor-pointer rounded px-3 py-2.5 text-xs font-semibold border-2 border-imaze-red bg-imaze-light text-imaze-red transition-all duration-200">
+        <input type="checkbox" name="servizio[]" value="consulenza" class="hidden" />
+        <span class="checkbox-box w-4 h-4 rounded-sm border-2 border-imaze-red flex-shrink-0 flex items-center justify-center transition-all duration-200"></span>
+        Vorrei una consulenza / non ho ancora le idee chiare
+      </label>
+
+    </div>
+
+    <!-- Textarea -->
+    <textarea name="messaggio" placeholder="Raccontaci il tuo progetto" rows="4"
+      class="bg-imaze-light rounded px-4 py-3 text-sm outline-none border-2 border-transparent focus:border-imaze-red transition-colors resize-none"></textarea>
+
+    <!-- Bottone -->
+    <button type="submit"
+      class="bg-imaze-red text-imaze-light font-bold uppercase tracking-widest text-sm py-4 rounded hover:bg-imaze-black transition-colors duration-200 mt-1">
+      Invia
+    </button>
+
+    <!-- Messaggio conferma -->
+    <p id="form-success" class="hidden text-green-700 text-sm text-center font-semibold mt-1">
+      ✓ Grazie Imazer! Ti risponderemo presto. 
+    </p>
+
+  </form>
+</div>
+
+  
       <!-- Mappa + link – direttamente su sfondo nero della section -->
       <div class="flex flex-col gap-8 reveal">
 
         <div class="w-full text-right">
           <h2 class="font-bold text-2xl uppercase tracking-widest mb-3 text-imaze-red ">DOVE TROVARCI</h2>
           
-          <div class="w-full h-56 bg-imaze-dark rounded-xl flex flex-col items-center justify-center text-imaze-light/40 text-sm text-center px-4">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5592.853348224917!2d11.422660776480738!3d45.50148887107458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f3797f800d699%3A0x39c5c99fd87605f6!2simaze%20studio!5e0!3m2!1sit!2sit!4v1771895898164!5m2!1sit!2sit" width="100%" height="224" style="border:0;" allowfullscreen="" loading="lazy"
+          <div class="w-full h-96 bg-imaze-dark rounded-xl flex flex-col items-center justify-center text-imaze-light/40 text-sm text-center px-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5592.853348224917!2d11.422660776480738!3d45.50148887107458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f3797f800d699%3A0x39c5c99fd87605f6!2simaze%20studio!5e0!3m2!1sit!2sit!4v1771895898164!5m2!1sit!2sit" width="100%" height="384" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade" class="rounded-xl w-full"></iframe>
           </div>
-        
         </div>
 
+
         <div class="w-full text-right">
-          <h2 class="font-semibold text-xl md:text-2xl uppercase leading-tight mb-4 text-imaze-red">
+          <h2 class="font-bold text-xl md:text-2xl uppercase leading-tight mb-4 text-imaze-red">
             …oppure contattaci<br>direttamente!
           </h2>
           <ul class="flex flex-col gap-2.5 text-sm text-imaze-light">
