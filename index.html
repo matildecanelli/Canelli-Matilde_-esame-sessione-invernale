@@ -58,21 +58,21 @@
     </button>
 
     <!-- VOCI DEL MENù -->
-    <ul id="navItems" class=" w-full flex flex-row items-center gap-6 ml-4">
+    <ul id="navItems" class=" w-full flex flex-row items-center gap-6 ml-4 h-full">
       <li class="nav-item">
-        <a href="#servizi"   class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Servizi</a>
+        <a href="#servizi"   class="nav-gsap-link font-display font-semibold text-white ml-4 block hover:text-imaze-red transition-colors duration-200 cursor-pointer" style="font-size: clamp(0.9rem, 2.5vw, 1.8rem);">Servizi</a>
       </li>
       <li class="nav-item">
-        <a href="#chi-siamo" class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Chi siamo</a>
+        <a href="#chi-siamo" class="nav-gsap-link font-display font-semibold text-white ml-4 block hover:text-imaze-red transition-colors duration-200 cursor-pointer" style="font-size: clamp(0.9rem, 2.5vw, 1.8rem);">Chi siamo</a>
       </li>
       <li class="nav-item">
-        <a href="#lavori"    class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer"> Progetti</a>
+        <a href="#lavori"    class="nav-gsap-link font-display font-semibold text-white ml-4 block hover:text-imaze-red transition-colors duration-200 cursor-pointer" style="font-size: clamp(0.9rem, 2.5vw, 1.8rem);"> Progetti</a>
       </li>
       <li class="nav-item">
-        <a href="#lo-studio" class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">the Spaze</a>
+        <a href="#lo-studio" class="nav-gsap-link font-display font-semibold text-white ml-4 block hover:text-imaze-red transition-colors duration-200 cursor-pointer" style="font-size: clamp(0.9rem, 2.5vw, 1.8rem);">the Spaze</a>
       </li>
       <li class="nav-item">
-        <a href="#contatti"  class="nav-gsap-link font-display font-semibold text-3xl text-white ml-4 mb-3 block hover:text-imaze-red transition-colors duration-200 cursor-pointer">Contatti</a>
+        <a href="#contatti"  class="nav-gsap-link font-display font-semibold text-white ml-4 block hover:text-imaze-red transition-colors duration-200 cursor-pointer" style="font-size: clamp(0.9rem, 2.5vw, 1.8rem);">Contatti</a>
       </li>
     </ul>
 
@@ -134,7 +134,10 @@
 
     // Resize: resetta larghezza se chiuso
     window.addEventListener('resize', () => {
-      if (!nav.classList.contains('open')) nav.style.width = '';
+      if (!nav.classList.contains('open')) {
+    nav.style.width = '80px';
+    nav.style.height = '64px';
+  }
     });
   </script>
 
@@ -163,54 +166,63 @@
     
    <!-- SERVIZI -->
   <section id="servizi" class="bg-imaze-light py-20 px-6 md:px-16 scroll-mt-20">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <!-- Card 1 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
-        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
-          Concept,Direzione<br>Produzione e Post
-        </h3>
-        <p class="text-white text-sm leading-relaxed w-full">
-          Dall'idea iniziale al contenuto finale. Sviluppiamo concept, messaggi e direzione creativa su misura per il brand. Pianifichiamo ogni dettaglio e realizziamo contenuti foto e video coerenti ed emozionali.
-        </p>
-        <div class="mt-auto pt-32 w-full text-center">
-          <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light text-xs font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200">
-            Raccontaci la tua idea
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
-        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
-          Noleggio Spazio<br>e Attrezzature
-        </h3>
-        <p class="text-white text-sm leading-relaxed w-full">
-          Il nostro spazio può diventare anche il tuo. Uno studio attrezzato per shooting fotografici e video, arricchito da un servizio di noleggio. Offriamo un'attrezzatura professionale, selezionata per lavorare in modo fluido ed efficace.
-        </p>
-        <div class="mt-auto pt-32 w-full text-center">
-          <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light text-xs font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200">
-            Prenota ora
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
-        <h3 class="font-display font-bold text-imaze-red text-2xl leading-tight uppercase w-full text-center" style="min-height: 100px;">
-          Elaborazione Visual<br>e della Strategia
-        </h3>
-        <p class="text-white text-sm leading-relaxed w-full">
-          Le immagini funzionano solo se inserite in un sistema. Ogni contenuto ha un ruolo, ogni scelta ha una ragione. Diamo struttura al linguaggio visivo declinandolo su toni, formati e stili di ogni canale.
-        </p>
-        <div class="mt-auto">
-          <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light text-xs font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200">
-            Parliamo di strategia
-          </a>
-        </div>
-      </div>
-
+  <!-- Card 1 -->
+  <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+    <h3 class="font-bold text-imaze-red leading-tight uppercase w-full text-center"
+        style="font-size: clamp(1rem, 2vw, 1.5rem); min-height: clamp(60px, 8vw, 120px);">
+      Concept, Direzione<br>Produzione e Post
+    </h3>
+    <p class="text-white leading-relaxed w-full flex-1"
+       style="font-size: clamp(0.75rem, 1.2vw, 0.875rem);">
+      Dall'idea iniziale al contenuto finale. Sviluppiamo concept, messaggi e direzione creativa su misura per il brand. Pianifichiamo ogni dettaglio e realizziamo contenuti foto e video coerenti ed emozionali.
+    </p>
+    <div class="w-full flex justify-center pt-6">
+      <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200 text-center w-full"
+         style="font-size: clamp(0.6rem, 1vw, 0.75rem);">
+        Raccontaci la tua idea
+      </a>
     </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+    <h3 class="font-bold text-imaze-red leading-tight uppercase w-full text-center"
+        style="font-size: clamp(1rem, 2vw, 1.5rem); min-height: clamp(60px, 8vw, 120px);">
+      Noleggio Spazio<br>e Attrezzature
+    </h3>
+    <p class="text-white leading-relaxed w-full flex-1"
+       style="font-size: clamp(0.75rem, 1.2vw, 0.875rem);">
+      Il nostro spazio può diventare anche il tuo. Uno studio attrezzato per shooting fotografici e video, arricchito da un servizio di noleggio. Offriamo un'attrezzatura professionale, selezionata per lavorare in modo fluido ed efficace.
+    </p>
+    <div class="w-full flex justify-center pt-6">
+      <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200 text-center w-full"
+         style="font-size: clamp(0.6rem, 1vw, 0.75rem);">
+        Prenota ora
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="service-card rounded-lg p-6 flex flex-col gap-4 reveal bg-imaze-black items-center text-left">
+    <h3 class="font-bold text-imaze-red leading-tight uppercase w-full text-center"
+        style="font-size: clamp(1rem, 2vw, 1.5rem); min-height: clamp(60px, 8vw, 120px);">
+      Elaborazione Visual<br>e della Strategia
+    </h3>
+    <p class="text-white leading-relaxed w-full flex-1"
+       style="font-size: clamp(0.75rem, 1.2vw, 0.875rem);">
+      Le immagini funzionano solo se inserite in un sistema. Ogni contenuto ha un ruolo, ogni scelta ha una ragione. Diamo struttura al linguaggio visivo declinandolo su toni, formati e stili di ogni canale.
+    </p>
+    <div class="w-full flex justify-center pt-6">
+      <a href="#contatti" class="inline-block bg-imaze-red text-imaze-light font-bold uppercase tracking-widest px-5 py-3 rounded hover:bg-white hover:text-imaze-red transition-all duration-200 text-center w-full"
+         style="font-size: clamp(0.6rem, 1vw, 0.75rem);">
+        Parliamo di strategia
+      </a>
+    </div>
+  </div>
+
+</div>    
   </section>
 
     <!--ALETTA CARTELLA FOLD – CHI SIAMO-->
